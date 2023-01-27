@@ -83,6 +83,37 @@ public class BalancedBracketsTest {
         assertEquals(specNoBracket,expectedNoBracket,actualNoBracket);
     }
 
+    @Test
+    public void hasReversedBrackets() {
+        String spec = "hasUnbalancedBrackets returns true if str contains even number of [ and ] ";
+        boolean result = BalancedBrackets.hasBalancedBrackets("][");
+        boolean expected= false;
+        assertEquals(spec, expected, result);
+    }
+
+    @Test
+    public void hasReversedBracketsAmongCharacters() {
+        String spec = "hasUnbalancedBrackets returns true if str contains even number of [ and ] ";
+        boolean result = BalancedBrackets.hasBalancedBrackets("a]b[c");
+        boolean expected= false;
+        assertEquals(spec, expected, result);
+    }
+
+    @Test
+    public void hasMultipleReversedBrackets() {
+        String spec = "hasUnbalancedBrackets returns true if str contains even number of [ and ] ";
+        boolean result = BalancedBrackets.hasBalancedBrackets("][][");
+        boolean expected= false;
+        assertEquals(spec, expected, result);
+    }
+
+    @Test
+    public void stringWithNoReturnsTrue() {
+        String spec = "a string with no brackets returns true";
+        String testData = "Mitchell";
+        boolean result = BalancedBrackets.hasBalancedBrackets(testData);
+        assertTrue(spec, result);
+    }
 //    @Test
 //    public void isValidStringReturnsTrue() {
 //        assertTrue(BalancedBrackets.isValidString("Valid String"));
