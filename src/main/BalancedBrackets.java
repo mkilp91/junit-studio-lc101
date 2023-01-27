@@ -32,4 +32,38 @@ public class BalancedBrackets {
         }
         return brackets == 0;
     }
+
+    public static boolean hasUnbalancedBrackets(String str) {
+        int brackets = 0;
+        for (char ch : str.toCharArray()) {
+            if (ch == '[') {
+                brackets++;
+            } else if (ch == ']') {
+                brackets--;
+            }
+        }
+        return brackets%2 != 0;
+    }
+
+    public static boolean hasBrackets(String str) {
+//        char[] strArray = str.toCharArray();
+        if (!str.contains("[") && !str.contains("]")){
+            return false;
+        } else {
+            return true;
+        }
+    }
+
+//    public static boolean isValidString(String str) {
+//        Class type = str.getClass();
+//        if (type.toString() != "string"){
+//            return false;
+//        } else if (str == "") {
+//            return false;
+//        } else {
+//        return true;
+//        }
+//    }
 }
+
+
